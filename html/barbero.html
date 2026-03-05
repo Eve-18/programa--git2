@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Barberos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div id="barber-container">
+    <h2>Elige tu Barbero</h2>
+
+    <div class="barber-container">
+        <div class="service-item" onclick="selectBarber(this, 'Andres Hernandez')">
+            Andres Hernandez
+        </div>
+
+        <div class="service-item" onclick="selectBarber(this, 'Jose Garcia')">
+            Jose Garcia
+        </div>
+
+        <div class="service-item" onclick="selectBarber(this, 'Jeronimo Cepeda')">
+            Jeronimo Cepeda
+        </div>
+    </div>
+
+    <button id="goToDateTimeBtn" onclick="irFecha()" disabled>
+        Elegir barbero
+    </button>
+</div>
+
+<script>
+    let barberoSeleccionado = "";
+
+    function selectBarber(element, nombre) {
+        document.querySelectorAll(".service-item").forEach(item => {
+            item.classList.remove("selected");
+        });
+
+        element.classList.add("selected");
+        barberoSeleccionado = nombre;
+
+        document.getElementById("goToDateTimeBtn").disabled = false;
+    }
+
+    function irFecha() {
+        if (barberoSeleccionado !== "") {
+            window.location.href = "fecha.html";
+        }
+    }
+</script>
+
+</body>
+</html>

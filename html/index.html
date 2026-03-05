@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>MadHouse Barber Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1 class="main-title">Bienvenido a MadHouse</h1>
+    <p class="slogan">"Tu estilo, sin esperas. Reserva tu próxima transformación con un solo toque."</p>
+    <img src="../madhouse_logo.png" alt="Logo de MadHouse" class="logo">
+</header>
+
+<div id="auth-container">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="login-username" placeholder="Usuario" required>
+    <input type="password" id="login-password" placeholder="Contraseña" required>
+
+    <button onclick="irServicios()">Entrar</button>
+
+    <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+</div>
+
+<script>
+    function irServicios() {
+        const usuario = document.getElementById("login-username").value;
+        const password = document.getElementById("login-password").value;
+
+        if(usuario === "" || password === "") {
+            alert("Por favor completa todos los campos");
+        } else {
+            window.location.href = "servicios.html";
+        }
+    }
+</script>
+
+</body>
+</html>

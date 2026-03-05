@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fecha y Hora</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div id="datetime-container">
+    <h2>Elige Fecha y Hora</h2>
+
+    <input type="date" id="date-picker">
+    <input type="time" id="time-picker">
+
+    <button onclick="confirmarCita()">Confirmar Cita</button>
+</div>
+
+<script>
+    function confirmarCita() {
+        const fecha = document.getElementById("date-picker").value;
+        const hora = document.getElementById("time-picker").value;
+
+        if (fecha === "" || hora === "") {
+            alert("Por favor selecciona fecha y hora");
+        } else {
+            alert("Cita confirmada para el " + fecha + " a las " + hora);
+        }
+    }
+</script>
+
+</body>
+</html>

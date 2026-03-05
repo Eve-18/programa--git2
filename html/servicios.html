@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<main id="services-container">
+    <h2>Nuestros Servicios</h2>
+
+    <div class="service-container">
+        <div class="service-item" onclick="selectService(this, 'Corte de Cabello')">
+            Corte de Cabello
+        </div>
+
+        <div class="service-item" onclick="selectService(this, 'Arreglo de Barba')">
+            Arreglo de Barba
+        </div>
+
+        <div class="service-item" onclick="selectService(this, 'Corte y Barba')">
+            Corte y Barba
+        </div>
+
+        <div class="service-item" onclick="selectService(this, 'Afeitado Clásico')">
+            Afeitado Clásico
+        </div>
+    </div>
+
+    <button id="btnElegir" onclick="confirmService()" disabled>
+        Elegir Servicio
+    </button>
+</main>
+
+<script>
+    let servicioSeleccionado = "";
+
+    function selectService(element, servicio) {
+        document.querySelectorAll(".service-item").forEach(item => {
+            item.classList.remove("selected");
+        });
+
+        element.classList.add("selected");
+        servicioSeleccionado = servicio;
+        document.getElementById("btnElegir").disabled = false;
+    }
+
+    function confirmService() {
+        if(servicioSeleccionado !== "") {
+
+            window.location.href = "barbero.html";
+        }
+    }
+</script>
+
+</body>
+</html>
